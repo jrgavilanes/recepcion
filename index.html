@@ -132,47 +132,56 @@
                                 <div class="col col-md-2">
                                     <div class="sticky-top">
                                         <h4 class="mt-2">Buscador de descargas</h4>
-                                    <div class="form-group">
-                                        <label for="exampleSelect1" class="form-label">Muelle</label>
-                                        <select class="form-select" id="listaMuelles" v-model="muelleSelected">
-                                            <option v-for="option in listaMuelles" v-bind:value="option">
-                                                {{ option }}
-                                            </option>
-                                        </select>
-                                        <label for="exampleSelect1" class="form-label mt-4">Descarga</label>
-                                        <select class="form-select" id="exampleSelect1">
-                                            <!-- <option>11</option>
+                                        <div class="form-group">
+                                            <label for="exampleSelect1" class="form-label">Muelle</label>
+                                            <select class="form-select" id="listaMuelles" v-model="muelleSelected"
+                                                @change="filtrarDatos()">
+                                                <option value="">Todos</option>
+                                                <option v-for="option in listaMuelles" v-bind:value="option">
+                                                    {{ option }}
+                                                </option>
+                                            </select>
+                                            <label for="exampleSelect1" class="form-label mt-4">Descarga</label>
+                                            <select class="form-select" id="exampleSelect1">
+                                                <option value="">Todos</option>
+                                                <!-- <option>11</option>
                                             <option>12</option>
                                             <option>13</option>
                                             <option>14</option>
                                             <option>25</option> -->
-                                        </select>
-                                        <label for="exampleSelect1" class="form-label mt-4">Matricula</label>
-                                        <select class="form-select" id="exampleSelect1">
-                                            <!-- <option>11</option>
+                                            </select>
+                                            <label for="exampleSelect1" class="form-label mt-4">Matricula</label>
+                                            <select class="form-select" id="exampleSelect1">
+                                                <option value="">Todos</option>
+                                                <!-- <option>11</option>
                                             <option>12</option>
                                             <option>13</option>
                                             <option>14</option>
                                             <option>25</option> -->
-                                        </select>
-                                        <label for="exampleSelect1" class="form-label mt-4">Pedido</label>
-                                        <select class="form-select" id="exampleSelect1">
-                                            <!-- <option>111212</option>
+                                            </select>
+                                            <label for="exampleSelect1" class="form-label mt-4">Pedido</label>
+                                            <select class="form-select" id="exampleSelect1">
+                                                <option value="" selected>Todos</option>
+                                                <!-- <option>111212</option>
                                             <option>12656565</option>
                                             <option>132333</option>
                                             <option>14345</option>
                                             <option>25555543</option> -->
-                                        </select>
-                                        <br>
-                                        <button class="btn btn-success" @click="filtrarDatos()">Buscar</button>
-                                        <button class="btn btn-danger" @click="quitarFiltro()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                                          </svg>quitar filtro</button>
-                                    </div>
+                                            </select>
+                                            <br>
+                                            <button class="btn btn-success" @click="filtrarDatos()">Buscar</button>
+                                            <button class="btn btn-danger" @click="quitarFiltro()"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                                </svg>quitar filtro</button>
+                                        </div>
 
                                     </div>
-                                    
+
                                 </div>
                                 <div class="col col-md-10 bg-dark">
                                     <h4 class="mt-2">Resultado de búsqueda</h4>
@@ -221,7 +230,18 @@
                                                         <tbody>
                                                             <tr
                                                                 v-for="line of getLineasPedidosDescarga(descarga.descarga) ">
-                                                                <th scope="col">{{line.articulo}}</th>
+                                                                <th scope="col">
+                                                                    <button title="Crear paleta" type="button"
+                                                                        class="btn btn-outline-warning"><svg
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            width="32" height="32" fill="currentColor"
+                                                                            class="bi bi-box-seam" viewBox="0 0 16 16">
+                                                                            <path
+                                                                                d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
+                                                                        </svg>
+                                                                    </button>
+                                                                    {{line.descarga}}-{{line.pedido}}-{{line.articulo}}
+                                                                </th>
                                                                 <th scope="col">{{line.varlog}}</th>
                                                                 <th scope="col">{{line.cantidadRecepcionada}}</th>
                                                                 <th scope="col">{{line.cantidadPedida}}</th>
@@ -231,7 +251,6 @@
                                                             </tr>
                                                         </tbody>
                                                     </table>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -242,11 +261,186 @@
                     </div>
                 </div>
             </div>
+        </div>
 
 
+        <div v-if="pantalla_actual=='identifica_paleta'">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <button class="navbar-brand btn" href="#" @click="pantalla_actual='elige_almacen'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-arrow-left-square" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z">
+                            </path>
+                        </svg>
+                    </button>
+                    IDENTIFICA PALETA
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+                        <ul class="navbar-nav me-auto">
 
+                        </ul>
+                        <form class="d-flex">
+                            <div class="form-check form-switch nav-link">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Modo manual</label>
+                            </div>
+                            <a href="#" class="nav-link">{{almacen.nombre}}</a>
+                            <a href="#" class="nav-link">{{usuario}}</a>
+                        </form>
+                    </div>
+                </div>
+            </nav>
 
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+
+                        <div v-if="mensaje_error" class="alert alert-danger" role="alert">
+                            {{mensaje_error}}
+                        </div>
+
+                        <div class="mb-3">
+
+                            <div class="row">
+                                <div class="col col-md-2">
+                                    <div class="sticky-top">
+                                        <h4 class="mt-2">Buscador de descargas</h4>
+                                        <div class="form-group">
+                                            <label for="exampleSelect1" class="form-label">Muelle</label>
+                                            <select class="form-select" id="listaMuelles" v-model="muelleSelected"
+                                                @change="filtrarDatos()">
+                                                <option value="">Todos</option>
+                                                <option v-for="option in listaMuelles" v-bind:value="option">
+                                                    {{ option }}
+                                                </option>
+                                            </select>
+                                            <label for="exampleSelect1" class="form-label mt-4">Descarga</label>
+                                            <select class="form-select" id="exampleSelect1">
+                                                <option value="">Todos</option>
+                                                <!-- <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>25</option> -->
+                                            </select>
+                                            <label for="exampleSelect1" class="form-label mt-4">Matricula</label>
+                                            <select class="form-select" id="exampleSelect1">
+                                                <option value="">Todos</option>
+                                                <!-- <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                            <option>25</option> -->
+                                            </select>
+                                            <label for="exampleSelect1" class="form-label mt-4">Pedido</label>
+                                            <select class="form-select" id="exampleSelect1">
+                                                <option value="" selected>Todos</option>
+                                                <!-- <option>111212</option>
+                                            <option>12656565</option>
+                                            <option>132333</option>
+                                            <option>14345</option>
+                                            <option>25555543</option> -->
+                                            </select>
+                                            <br>
+                                            <button class="btn btn-success" @click="filtrarDatos()">Buscar</button>
+                                            <button class="btn btn-danger" @click="quitarFiltro()"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                                </svg>quitar filtro</button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="col col-md-10 bg-dark">
+                                    <h4 class="mt-2">Resultado de búsqueda</h4>
+
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">MUELLE</th>
+                                                <th scope="col">PEDIDO</th>
+                                                <th scope="col">MATRICULA</th>
+                                                <th scope="col">DESCARGA</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                    <!-- {{getDescargas()}} -->
+                                    <div class="accordion" id="accordionExample">
+
+                                        <div v-for="(descarga,index) of getDescargas()" class="accordion-item">
+                                            <h2 class="accordion-header" v-bind:id="'heading' + index">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse"
+                                                    v-bind:data-bs-target="'#collapse' + index" aria-expanded="true"
+                                                    v-bind:aria-controls="'collapse' + index">
+                                                    <div class="col">{{descarga.muelle}}</div>
+                                                    <div class="col">{{descarga.pedido}}</div>
+                                                    <div class="col">{{descarga.matricula}}</div>
+                                                    <div class="col">{{descarga.descarga}}</div>
+                                                </button>
+                                            </h2>
+                                            <div v-bind:id="'collapse' + index" class="accordion-collapse collapse"
+                                                aria-labelledby="'heading' + index" data-bs-parent="#accordionExample"
+                                                style="">
+                                                <div class="accordion-body">
+                                                    <!-- {{getLineasPedidosDescarga(descarga.descarga)}} -->
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Producto</th>
+                                                                <th scope="col">Variable</th>
+                                                                <th scope="col">Cantidad Recepcionada</th>
+                                                                <th scope="col">Cantidad Pedida</th>
+                                                                <th scope="col">Formato</th>
+                                                                <th scope="col">Denominación</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr
+                                                                v-for="line of getLineasPedidosDescarga(descarga.descarga) ">
+                                                                <th scope="col">
+                                                                    <button title="Crear paleta" type="button"
+                                                                        class="btn btn-outline-warning"><svg
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            width="32" height="32" fill="currentColor"
+                                                                            class="bi bi-box-seam" viewBox="0 0 16 16">
+                                                                            <path
+                                                                                d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
+                                                                        </svg>
+                                                                    </button>
+                                                                    {{line.descarga}}-{{line.pedido}}-{{line.articulo}}
+                                                                </th>
+                                                                <th scope="col">{{line.varlog}}</th>
+                                                                <th scope="col">{{line.cantidadRecepcionada}}</th>
+                                                                <th scope="col">{{line.cantidadPedida}}</th>
+                                                                <th scope="col">{{line.formato}}</th>
+                                                                <th scope="col">{{line.denominacion.substring(0,20)}}
+                                                                </th>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -262,7 +456,7 @@
             var app = new Vue({
                 el: '#app',
                 data: {
-                    pantalla_actual: 'descargas_activas',
+                    pantalla_actual: 'identifica_paleta',
                     mensaje_error: '',
                     usuario: 'juanra',
                     password: '',
@@ -342,9 +536,9 @@
                         },
                     ],
                 },
-                mounted(){
+                mounted() {
                     this.loadDescargasActivas()
-                    
+
                 },
                 methods: {
                     valida_usuario() {
@@ -361,20 +555,20 @@
                         this.loadDescargasActivas()
                     },
 
-                    getDistinctCombosValues(){
+                    getDistinctCombosValues() {
 
                         let muelles = []
-                        
+
 
                         for (const descarga of this.descargasActivasCacheada) {
                             muelles.push(descarga.muelle)
-                        
+
                         }
 
                         // console.log("muelles", muelles)
 
                         this.listaMuelles = [...new Set(muelles)]
-                        this.muelleSelected = null                        
+                        this.muelleSelected = null
 
                     },
 
@@ -383,19 +577,16 @@
                         this.filtrarDatos()
                     },
 
-                    filtrarDatos(){
+                    filtrarDatos() {
+                        this.descargasActivas = this.descargasActivasCacheada.slice()
 
-                        
-                            
                         if (this.muelleSelected == null || this.muelleSelected == "") {
-                            return  this.descargasActivas = this.descargasActivasCacheada.slice()
-                        
-                        
-                        } 
+                            return
+                        }
 
-                        this.descargasActivas = this.descargasActivas.filter((x)=>x.muelle === this.muelleSelected)
-                        
-                        
+                        this.descargasActivas = this.descargasActivas.filter((x) => x.muelle === this.muelleSelected)
+
+
 
                     },
                     getDescargas() {
@@ -423,6 +614,8 @@
 
                         for (const order of descarga[0].pedidos) {
                             for (const line of order.lineas) {
+                                line.pedido = order.cod_pedido
+                                line.descarga = cod_descarga
                                 result.push(line)
                             }
                         }
@@ -433,7 +626,7 @@
                         fetch('descargasActivas.json')
                             .then(response => response.json())
                             .then(data => {
-                                console.log("recibo",data)
+                                console.log("recibo", data)
                                 this.descargasActivasCacheada = data
                                 this.descargasActivas = data.slice()
                                 this.getDistinctCombosValues()
