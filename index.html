@@ -179,17 +179,17 @@
                                             </tr>
                                         </thead>
                                     </table>
-
+                                    <!-- {{getDescargas()}} -->
                                     <div class="accordion" id="accordionExample">
 
-                                        <div v-for="(descarga,index) in descargasActivas" class="accordion-item">
+                                        <div v-for="(descarga,index) of getDescargas()" class="accordion-item">
                                             <h2 class="accordion-header" v-bind:id="'heading' + index">
                                                 <button class="accordion-button collapsed" type="button"
                                                     data-bs-toggle="collapse"
                                                     v-bind:data-bs-target="'#collapse' + index" aria-expanded="true"
                                                     v-bind:aria-controls="'collapse' + index">
                                                     <div class="col">{{descarga.muelle}}</div>
-                                                    <div class="col">{{descarga.muelle}}</div>
+                                                    <div class="col">{{descarga.pedido}}</div>
                                                     <div class="col">{{descarga.matricula}}</div>
                                                     <div class="col">{{descarga.descarga}}</div>
                                                 </button>
@@ -198,6 +198,7 @@
                                                 aria-labelledby="'heading' + index" data-bs-parent="#accordionExample"
                                                 style="">
                                                 <div class="accordion-body">
+                                                    <!-- {{getLineasPedidosDescarga(descarga.descarga)}} -->
                                                     <table class="table">
                                                         <thead>
                                                             <tr>
@@ -210,107 +211,23 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                                <th scope="col">111111111</th>
-                                                                <th scope="col">222222222</th>
-                                                                <th scope="col">333333333</th>
-                                                                <th scope="col">444444444</th>
-                                                                <th scope="col">111111111</th>
-                                                                <th scope="col">222222222</th>
+                                                            <tr
+                                                                v-for="line of getLineasPedidosDescarga(descarga.descarga) ">
+                                                                <th scope="col">{{line.articulo}}</th>
+                                                                <th scope="col">{{line.varlog}}</th>
+                                                                <th scope="col">{{line.cantidadRecepcionada}}</th>
+                                                                <th scope="col">{{line.cantidadPedida}}</th>
+                                                                <th scope="col">{{line.formato}}</th>
+                                                                <th scope="col">{{line.denominacion.substring(0,20)}}
+                                                                </th>
                                                             </tr>
                                                         </tbody>
                                                     </table>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-
-                                    <!-- <div class="accordion" id="accordionExample">
-
-                                            <div class="accordion-item">
-                                                <h2 class="accordion-header" id="headingOne">
-                                                    <button class="accordion-button collapsed" type="button"
-                                                        data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                                        aria-expanded="true" aria-controls="collapseOne">
-                                                        <div class="col">11</div>
-                                                        <div class="col">111111</div>
-                                                        <div class="col">matricula1</div>
-                                                        <div class="col">descarga1</div>
-                                                    </button>
-                                                </h2>
-                                                <div id="collapseOne" class="accordion-collapse collapse"
-                                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample"
-                                                    style="">
-                                                    <div class="accordion-body">
-                                                        <table class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th scope="col">Producto</th>
-                                                                    <th scope="col">Variable</th>
-                                                                    <th scope="col">Cantidad Recepcionada</th>
-                                                                    <th scope="col">Cantidad Pedida</th>
-                                                                    <th scope="col">Formato</th>
-                                                                    <th scope="col">Denominación</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <th scope="col">111111111</th>
-                                                                    <th scope="col">222222222</th>
-                                                                    <th scope="col">333333333</th>
-                                                                    <th scope="col">444444444</th>
-                                                                    <th scope="col">111111111</th>
-                                                                    <th scope="col">222222222</th>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="accordion-item">
-                                                <h2 class="accordion-header" id="heading2">
-                                                    <button class="accordion-button collapsed" type="button"
-                                                        data-bs-toggle="collapse" data-bs-target="#collapse2"
-                                                        aria-expanded="true" aria-controls="collapse2">
-                                                        <div class="col">22</div>
-                                                        <div class="col">222222</div>
-                                                        <div class="col">matricula2</div>
-                                                        <div class="col">descarga2</div>
-                                                    </button>
-                                                </h2>
-                                                <div id="collapse2" class="accordion-collapse collapse"
-                                                    aria-labelledby="heading2" data-bs-parent="#accordionExample"
-                                                    style="">
-                                                    <div class="accordion-body">
-                                                        <table class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th scope="col">Producto</th>
-                                                                    <th scope="col">Variable</th>
-                                                                    <th scope="col">Cantidad Recepcionada</th>
-                                                                    <th scope="col">Cantidad Pedida</th>
-                                                                    <th scope="col">Formato</th>
-                                                                    <th scope="col">Denominación</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <th scope="col">22222</th>
-                                                                    <th scope="col">33333</th>
-                                                                    <th scope="col">4444</th>
-                                                                    <th scope="col">3333</th>
-                                                                    <th scope="col">1111</th>
-                                                                    <th scope="col">22222</th>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
-
                                 </div>
                             </div>
                         </div>
@@ -416,6 +333,9 @@
                         },
                     ],
                 },
+                mounted(){
+                    this.loadDescargasActivas()
+                },
                 methods: {
                     valida_usuario() {
                         if (this.usuario === this.password) {
@@ -429,9 +349,47 @@
                         this.almacen = almacen
                         this.pantalla_actual = "descargas_activas"
                     },
-                    getDescargas() {
 
-                    }
+                    getDescargas() {
+                        const result = []
+
+                        for (const order of this.descargasActivas) {
+                            const orderObj = {}
+                            orderObj.muelle = order.muelle
+                            orderObj.descarga = order.descarga
+                            orderObj.matricula = order.matricula
+                            for (const pedido of order.pedidos) {
+                                orderObj.pedido = pedido.cod_pedido
+                                result.push(orderObj)
+                            }
+                        }
+
+                        return result
+                    },
+                    getLineasPedidosDescarga(cod_descarga) {
+                        const result = []
+
+                        const descarga = this.descargasActivas.filter((x) => x.descarga === cod_descarga)
+
+                        if (descarga.length === 0) return result
+
+                        for (const order of descarga[0].pedidos) {
+                            for (const line of order.lineas) {
+                                result.push(line)
+                            }
+                        }
+
+                        return result
+                    },
+                    loadDescargasActivas() {
+                        fetch('descargasActivas.json')
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log("recibo",data)
+                                this.descargasActivas = data
+                            });
+
+                    },
                 }
             })
         </script>

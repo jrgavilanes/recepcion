@@ -1,0 +1,58 @@
+[
+    {
+        "muelle": 12,
+        "descarga": "A0001",
+        "matricula": "Matri1",
+        "pedidos": [
+            {
+                "cod_pedido": "P0008",
+                "lineas": [
+                    {
+                        "articulo": "00001",
+                        "varlog": "0",
+                        "denominacion": "articulo 1",
+                        "formato": "C01",
+                        "cantidadPedida": 10,
+                        "cantidadRecepcionada": 0
+                    },
+                    {
+                        "articulo": "00002",
+                        "varlog": "0",
+                        "denominacion": "articulo 2",
+                        "formato": "C01",
+                        "cantidadPedida": 20,
+                        "cantidadRecepcionada": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "muelle": 13,
+        "descarga": "A0002",
+        "matricula": "Matri2",
+        "pedidos": [
+            {
+                "cod_pedido": "P0002",
+                "lineas": [
+                    {
+                        "articulo": "00003",
+                        "varlog": "0",
+                        "denominacion": "articulo 3",
+                        "formato": "C01",
+                        "cantidadPedida": 100,
+                        "cantidadRecepcionada": 0
+                    },
+                    {
+                        "articulo": "00004",
+                        "varlog": "0",
+                        "denominacion": "articulo 4",
+                        "formato": "C01",
+                        "cantidadPedida": 200,
+                        "cantidadRecepcionada": 0
+                    }
+                ]
+            }
+        ]
+    }
+]
