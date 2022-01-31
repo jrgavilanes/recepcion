@@ -130,7 +130,8 @@
 
                             <div class="row">
                                 <div class="col col-md-2">
-                                    <h4 class="mt-2">Buscador de descargas</h4>
+                                    <div class="sticky-top">
+                                        <h4 class="mt-2">Buscador de descargas</h4>
                                     <div class="form-group">
                                         <label for="exampleSelect1" class="form-label">Muelle</label>
                                         <select class="form-select" id="listaMuelles" v-model="muelleSelected">
@@ -140,31 +141,38 @@
                                         </select>
                                         <label for="exampleSelect1" class="form-label mt-4">Descarga</label>
                                         <select class="form-select" id="exampleSelect1">
-                                            <option>11</option>
+                                            <!-- <option>11</option>
                                             <option>12</option>
                                             <option>13</option>
                                             <option>14</option>
-                                            <option>25</option>
+                                            <option>25</option> -->
                                         </select>
                                         <label for="exampleSelect1" class="form-label mt-4">Matricula</label>
                                         <select class="form-select" id="exampleSelect1">
-                                            <option>11</option>
+                                            <!-- <option>11</option>
                                             <option>12</option>
                                             <option>13</option>
                                             <option>14</option>
-                                            <option>25</option>
+                                            <option>25</option> -->
                                         </select>
                                         <label for="exampleSelect1" class="form-label mt-4">Pedido</label>
                                         <select class="form-select" id="exampleSelect1">
-                                            <option>111212</option>
+                                            <!-- <option>111212</option>
                                             <option>12656565</option>
                                             <option>132333</option>
                                             <option>14345</option>
-                                            <option>25555543</option>
+                                            <option>25555543</option> -->
                                         </select>
                                         <br>
-                                        <button class="btn btn-success">Buscar</button>
+                                        <button class="btn btn-success" @click="filtrarDatos()">Buscar</button>
+                                        <button class="btn btn-danger" @click="quitarFiltro()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                          </svg>quitar filtro</button>
                                     </div>
+
+                                    </div>
+                                    
                                 </div>
                                 <div class="col col-md-10 bg-dark">
                                     <h4 class="mt-2">Resultado de búsqueda</h4>
@@ -274,6 +282,7 @@
                     },
                     listaMuelles: [1, 2, 3],
                     muelleSelected: null,
+                    descargasActivasCacheada: [],
                     descargasActivas: [
                         {
                             muelle: 12,
@@ -335,6 +344,7 @@
                 },
                 mounted(){
                     this.loadDescargasActivas()
+                    
                 },
                 methods: {
                     valida_usuario() {
@@ -348,8 +358,46 @@
                     setCurrentAlmacen(almacen) {
                         this.almacen = almacen
                         this.pantalla_actual = "descargas_activas"
+                        this.loadDescargasActivas()
                     },
 
+                    getDistinctCombosValues(){
+
+                        let muelles = []
+                        
+
+                        for (const descarga of this.descargasActivasCacheada) {
+                            muelles.push(descarga.muelle)
+                        
+                        }
+
+                        // console.log("muelles", muelles)
+
+                        this.listaMuelles = [...new Set(muelles)]
+                        this.muelleSelected = null                        
+
+                    },
+
+                    quitarFiltro() {
+                        this.muelleSelected = null
+                        this.filtrarDatos()
+                    },
+
+                    filtrarDatos(){
+
+                        
+                            
+                        if (this.muelleSelected == null || this.muelleSelected == "") {
+                            return  this.descargasActivas = this.descargasActivasCacheada.slice()
+                        
+                        
+                        } 
+
+                        this.descargasActivas = this.descargasActivas.filter((x)=>x.muelle === this.muelleSelected)
+                        
+                        
+
+                    },
                     getDescargas() {
                         const result = []
 
@@ -386,7 +434,9 @@
                             .then(response => response.json())
                             .then(data => {
                                 console.log("recibo",data)
-                                this.descargasActivas = data
+                                this.descargasActivasCacheada = data
+                                this.descargasActivas = data.slice()
+                                this.getDistinctCombosValues()
                             });
 
                     },
