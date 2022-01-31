@@ -5,7 +5,7 @@
         "matricula": "Matri1",
         "pedidos": [
             {
-                "cod_pedido": "P0008",
+                "cod_pedido": "P0001",
                 "lineas": [
                     {
                         "articulo": "00001",
@@ -61,7 +61,7 @@
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0003",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -84,12 +84,12 @@
         ]
     },
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 14,
+        "descarga": "A0003",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0004",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -113,12 +113,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 15,
+        "descarga": "A0004",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0005",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -142,12 +142,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 16,
+        "descarga": "A0005",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0006",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -171,12 +171,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 17,
+        "descarga": "A0006",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0007",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -200,12 +200,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 18,
+        "descarga": "A0007",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0008",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -229,12 +229,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 19,
+        "descarga": "A0008",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0009",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -258,12 +258,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 20,
+        "descarga": "A0009",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0010",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -287,12 +287,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 21,
+        "descarga": "A0010",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0011",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -316,12 +316,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 22,
+        "descarga": "A00011",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0012",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -345,12 +345,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 23,
+        "descarga": "A0012",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0013",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -374,12 +374,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 24,
+        "descarga": "A0013",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0014",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -403,12 +403,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 25,
+        "descarga": "A0014",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0015",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -432,12 +432,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 26,
+        "descarga": "A0015",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0016",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -461,12 +461,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 27,
+        "descarga": "A0016",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0017",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -490,12 +490,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 28,
+        "descarga": "A0017",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0018",
                 "lineas": [
                     {
                         "articulo": "00003",
@@ -519,12 +519,12 @@
     }
     ,
     {
-        "muelle": 13,
-        "descarga": "A0002",
+        "muelle": 29,
+        "descarga": "A0018",
         "matricula": "Matri2",
         "pedidos": [
             {
-                "cod_pedido": "P0002",
+                "cod_pedido": "P0019",
                 "lineas": [
                     {
                         "articulo": "00003",
