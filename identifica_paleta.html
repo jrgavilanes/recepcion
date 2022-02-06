@@ -452,6 +452,16 @@
 
                 },
                 mounted() {
+                    const queryString = window.location.search;
+                    urlParams = queryString.substring(4,queryString.length).split("-")
+                    this.paleta.descarga.codigoDescarga = urlParams[0]
+                    this.paleta.descarga.pedido = urlParams[1]
+                    this.paleta.articulo.codigo = urlParams[2]
+                    this.paleta.articulo.varlog = urlParams[3]
+                    this.paleta.descarga.muelle = urlParams[4]
+                    this.paleta.descarga.matricula = urlParams[5]
+                    this.paleta.articulo.descripcion = `Denominación de ${this.paleta.articulo.codigo}-${this.paleta.articulo.varlog}`
+                    this.paleta.descarga.nombreProveedor= `Proveedor del pedido ${this.paleta.descarga.pedido}`;
                 },
                 methods: {
                 }

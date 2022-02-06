@@ -245,19 +245,19 @@
                                         <div class="accordion" id="accordionExample">
 
                                             <div v-for="(descarga,index) of getDescargas()" class="accordion-item">
-                                                <h2 class="accordion-header" v-bind:id="'heading' + index">
+                                                <h2 class="accordion-header" v-bind:id="'heading' + descarga.descarga +'-'+descarga.pedido">
                                                     <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse"
-                                                        v-bind:data-bs-target="'#collapse' + index" aria-expanded="true"
-                                                        v-bind:aria-controls="'collapse' + index">
+                                                        v-bind:data-bs-target="'#collapse' + descarga.descarga +'-'+descarga.pedido" aria-expanded="true"
+                                                        v-bind:aria-controls="'collapse' + descarga.descarga +'-'+descarga.pedido">
                                                         <div class="col">{{descarga.muelle}}</div>
                                                         <div class="col">{{descarga.pedido}}</div>
                                                         <div class="col">{{descarga.matricula}}</div>
                                                         <div class="col">{{descarga.descarga}}</div>
                                                     </button>
                                                 </h2>
-                                                <div v-bind:id="'collapse' + index" class="accordion-collapse collapse"
-                                                    aria-labelledby="'heading' + index"
+                                                <div v-bind:id="'collapse' + descarga.descarga +'-'+descarga.pedido" class="accordion-collapse collapse"
+                                                    aria-labelledby="'heading' + descarga.descarga +'-'+descarga.pedido"
                                                     data-bs-parent="#accordionExample" style="">
                                                     <div class="accordion-body">
                                                         <!-- {{getLineasPedidosDescarga(descarga.descarga)}} -->
@@ -277,7 +277,7 @@
                                                                     v-for="line of getLineasPedidosDescarga(descarga.descarga) ">
                                                                     <th scope="col">
                                                                         <a title="Crear paleta" type="button"
-                                                                            href="identifica_paleta.html"
+                                                                            :href=`identifica_paleta.html?id=${line.descarga}-${line.pedido}-${line.articulo}-${line.varlog}-${descarga.muelle}-${descarga.matricula}`
                                                                             class="btn btn-outline-warning"><svg
                                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                                 width="32" height="32"
@@ -688,7 +688,7 @@
             var app = new Vue({
                 el: '#app',
                 data: {
-                    pantalla_actual: 'identifica_paleta',
+                    pantalla_actual: 'descargas_activas',
                     mensaje_error: '',
                     usuario: 'juanra',
                     password: '',
